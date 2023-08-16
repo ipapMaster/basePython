@@ -1,10 +1,9 @@
 # Списки, цикл for
 
-a = []  # от 0 до 10
+a = ['Первый', 'Второй']
+members = 4
 
-# a.append(что добавить(значение))
+for x in (range(members)):
+    print(a[x % 2])
 
-for x in reversed(range(11)):
-    a.append(x)
-
-print(a)
+print('Расчёт окончен')
