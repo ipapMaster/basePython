@@ -1,12 +1,16 @@
-# Заполнить пустой список целыми числами от 0 до 10
-# и вывести только чётные циклом for и range
+import turtle as t
 
-a = []
+colors = ['red', 'green', 'blue',
+          'yellow', 'gray', 'white']
 
-# заполнение пустого списка
-for x in range(11):
-    a. append(x)
+t.bgcolor('black')
+t.speed(0)  # максимальная скорость
+angle = 360 / len(colors)
 
-# распечатываем в цикле 0, 2, 4, ....
-for index in range(0, len(a), 2):
-    print(a[index])
+for x in range(200):
+    t.pencolor(colors[x % len(colors[0:2])])
+    t.width(x // 100 + 1)
+    t.forward(x)
+    t.left(angle)
+
+t.mainloop()
