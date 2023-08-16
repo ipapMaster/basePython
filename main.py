@@ -1,11 +1,10 @@
 # Списки, цикл for
 
-a = ['имя', 'бремя', 'стремя', 'знамя', 'пламя', 'племя']
+a = []  # от 0 до 10
 
-# a.sort()
+# a.append(что добавить(значение))
 
-for index in range(len(a)):
-    print(a[index])
+for x in reversed(range(11)):
+    a.append(x)
 
-for item in a:
-    print(item)
+print(a)
