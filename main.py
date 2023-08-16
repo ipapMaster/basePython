@@ -1,14 +1,24 @@
-temperature = 39.8  # запятая недопустима при float
-# ASCII 176 - B0 - °
-# Unicode 2 байта
-# Escape Sequence
-string = 'Температура - ' + str(temperature) + '\xB0C'
-string += ', это почти ' + str(round(temperature)) + '\xB0C'
+# Списки
 
-print(string)
+array = []  # пустой список
+array2 = list('Python')  # пустой список через функцию list
+array3 = [1, 2, 3, 4, 5]  # аналог маcсива типа int
+list_4 = [36.6, 50, 'Температура', True]
+index = -1
+length = len('Python')
+print('Список длиной -', length)
+print(list_4[-3])
+print(array2)
 
-# Температура - 39.7, это почти 40.
+counter = 0  # счётчик элементов
 
-# str(X) - преобразование X в строку
-# int(X) - преобразование X в целое
-# float(X) - преобразование X в десятичную дробь
+while counter < len(list_4):
+    print(list_4[counter])
+    counter += 1
+
+# Срез подчиняется системе sss
+# s - start
+# s - stop
+# s - step
+
+print(list_4[0:len(list_4):2])
