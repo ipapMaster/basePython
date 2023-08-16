@@ -1,8 +1,12 @@
-count = 0  # счётчик
+temperature = 39.9  # запятая недопустима при float
 
-while count < 10:
-    if count == 5:
-        count += 1
-        continue
-    print(count)
-    count += 1
+string = 'Температура - ' + str(temperature)
+string += ', это почти ' + str(int(temperature) + 1)
+
+print(string)
+
+# Температура - 39.7, это почти 40.
+
+# str(X) - преобразование X в строку
+# int(X) - преобразование X в целое
+# float(X) - преобразование X в десятичную дробь
