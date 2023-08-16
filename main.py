@@ -1,7 +1,9 @@
-temperature = 39.9  # запятая недопустима при float
-
-string = 'Температура - ' + str(temperature)
-string += ', это почти ' + str(int(temperature) + 1)
+temperature = 39.8  # запятая недопустима при float
+# ASCII 176 - B0 - °
+# Unicode 2 байта
+# Escape Sequence
+string = 'Температура - ' + str(temperature) + '\xB0C'
+string += ', это почти ' + str(round(temperature)) + '\xB0C'
 
 print(string)
 
