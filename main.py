@@ -1,7 +1,21 @@
-a = list(input('Ввод числа: '))  # 123
+from datetime import datetime as d
 
-for n in a:
-    if int(n) % 2 == 0:
-        print('Число:', n, 'чётное.')
-    else:
-        print('Число:', n, 'нечётное.')
+raw_time = d.time(d.now())
+
+# строка форматирования времени - strftime
+# %H - часы в 24 часовом формате
+# %M - минуты
+# %S - секунды
+
+print('На часах', raw_time.strftime('%H:%M'))
+
+cur_hour = int(raw_time.strftime('%H'))
+
+if cur_hour >= 6 and cur_hour < 12:
+    print('Доброе утро')
+elif cur_hour >= 12 and cur_hour < 18:
+    print('Добрый день')
+elif cur_hour >= 18 and cur_hour < 23:
+    print('Добрый вечер')
+else:
+    print('Доброй ночи')
