@@ -1,16 +1,10 @@
-import turtle as t
+a = input('Ввод числа: ')
+l = len(a)  # 123 -> 1 + 2 + 3
 
-colors = ['red', 'green', 'blue',
-          'yellow', 'gray', 'white']
+print('Число разрядов:', l)
 
-t.bgcolor('black')
-t.speed(0)  # максимальная скорость
-angle = 360 / len(colors)
+s = 0  # переменная для вычисления суммы
+for x in a:
+    s += int(x)
 
-for x in range(200):
-    t.pencolor(colors[x % len(colors[0:2])])
-    t.width(x // 100 + 1)
-    t.forward(x)
-    t.left(angle)
-
-t.mainloop()
+print('Сумма разрядов:', s)
