@@ -1,6 +1,7 @@
 color = input('Цвет шарика: ')
 
-if color == 'red' or color == 'blue':
-    print('Подходит')
-else:
-    print('Не подходит')
+match color:
+    case 'red' | 'blue':
+        print('Подходит')
+    case _:
+        print('Не подходит')
