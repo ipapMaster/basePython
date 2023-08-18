@@ -1,21 +1,6 @@
-from datetime import datetime as d
+# тернарный оператор условия
 
-raw_time = d.time(d.now())
+t = 30
 
-# строка форматирования времени - strftime
-# %H - часы в 24 часовом формате
-# %M - минуты
-# %S - секунды
-
-print('На часах', raw_time.strftime('%H:%M'))
-
-cur_hour = int(raw_time.strftime('%H'))
-
-if 6 <= cur_hour < 12:
-    print('Доброе утро')
-elif 12 <= cur_hour < 18:
-    print('Добрый день')
-elif 18 <= cur_hour < 23:
-    print('Добрый вечер')
-else:
-    print('Доброй ночи')
+print('Тепло') if t > 24 else print('Прохладно')
+# выражение при True <условие> else выражение при False
