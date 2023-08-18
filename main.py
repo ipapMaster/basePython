@@ -1,6 +1,6 @@
-# тернарный оператор условия
+color = input('Цвет шарика: ')
 
-t = 30
-
-print('Тепло') if t > 24 else print('Прохладно')
-# выражение при True <условие> else выражение при False
+if color == 'red' or color == 'blue':
+    print('Подходит')
+else:
+    print('Не подходит')
