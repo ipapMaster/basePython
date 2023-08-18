@@ -4,11 +4,12 @@
 # join
 # count
 
-s = 'Мама мыла раму'
+lst = ['божество', 'вдохновенье', 'смех', 'слёзы', 'любовь']
 
-lst = s.split()  # пробел - по-умолчанию
-print(type(lst))
-
-string = ', '.join(lst)
-
+# с помощью join
+string = 'И ' + ', и '.join(lst) + '.'
 print(string)
+
+# с помощью print
+print('И', end=' ')
+print(*lst, sep=', и ')
