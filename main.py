@@ -1,9 +1,6 @@
 # Списочные выражения
 # (list comprehension)
 
-# классический способ заполнения списка
-# a = []
-# for x in range(10):
-#     a.append(x)
-a = [x for x in range(10)]
-print(a)
+# список, заполненный лишь чётными числами от 2 до 10
+a = [x for x in range(2, 11) if x % 2 == 0]
+print(a)  # [2, 4, 6, 8, 10]
