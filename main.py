@@ -1,18 +1,19 @@
 # Словари (dictionary)
 # key - value
-# ключи будут 1. блюдо, 2. состав
+# ключи будут 1. блюдо, ...
 d = {
-    'блюдо': 'окрошка',
-    'состав': ['квас', 'яйцо', 'огурец', 'колбаса'],
-    'кот': 'Барсик',
-    'кушает': ['Wiskas', 'Purina']
+    'блюдо': 'dish',
+    'состав': 'composition',
+    'кот': 'cat',
+    'собака': 'dog'
 }
 
-for item in d:  # перебор словаря по ключам
-    if isinstance(d[item], list):
-        d[item].sort()  # сортируем список перед выводом
-        print(item, end=':\n')
-        for index, value in enumerate(d[item]):
-            print('\t' + str(index + 1) + '.', value)
-    else:
-        print(item, d[item], sep=': ')
+print(list(d.keys()))  # список ключей
+print(list(d.values()))  # список значений
+for key, value in d.items():
+    print(key, value, sep='->')
+# выясним есть ли слово "кот" среди ключей
+if 'кот' in d.keys():  # метод keys - ключи
+    print('Кот есть')
+if 'cat' in d.values():  # метод values - значения
+    print('Cat есть')
