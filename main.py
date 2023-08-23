@@ -1,11 +1,17 @@
-# Двухмерные списки (массивы)
+# Словари (dictionary)
+# key - value
 
-# создание списка 3 х 3
-size = 3  # размерность 2D-списка
+d = {
+    'блюдо': 'окрошка',
+    'состав': ['квас', 'яйцо', 'огурец', 'колбаса']
+}
 
-a = []  # создали пустой список
-
-for i in range(size):
-    a.append([0] * size)  # превратили в 2D
-
-print(a)
+for item in d:
+    if isinstance(d[item], list):
+        print(item, end=':\n')
+        counter = 1
+        for v in d[item]:
+            print('\t' + str(counter) + '.', v)
+            counter += 1
+    else:
+        print(item, d[item], sep=': ')
