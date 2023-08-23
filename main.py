@@ -4,10 +4,7 @@
 keys = ['one', 'two', 'three']
 values = ['один', 'два', 'три']
 
-d = dict()  # создан пустой словарь
-l = len(keys)
-
-for i in range(l):
-    d[keys[i]] = values[i]
+# генерация словаря с помощью zip
+d = {k: v for k, v in zip(keys, values)}
 
 print(d)
