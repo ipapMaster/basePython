@@ -8,10 +8,9 @@ d = {
 
 for item in d:
     if isinstance(d[item], list):
+        d[item].sort()
         print(item, end=':\n')
-        counter = 1
-        for v in d[item]:
-            print('\t' + str(counter) + '.', v)
-            counter += 1
+        for i, v in enumerate(d[item]):
+            print('\t' + str(i + 1) + '.', v)
     else:
         print(item, d[item], sep=': ')
