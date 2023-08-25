@@ -1,16 +1,28 @@
-a = {1, 2, 3, 4}
-b = {2, 3, 5, 7, 11}
+# Функции
+def greeting(name='', surname='', age=0, sex=''):
+    # local scope
+    string = 'Привет, ' + str(name) + ' ' + str(surname) + '!'
+    if age != 0:
+        string += '\nТебе ' + str(age) + ' лет!'
+    if sex:
+        string += '\nПол ' + sex
+    return string
 
-# Объединение множеств
-print(a | b)  # a.union(b)
 
-# Разность множеств
-print(a - b)  # a.difference(b)
+def incr():
+    # local scope
+    global num
+    num += 1
+    return num
 
-# Пересечение
-print(a & b)  # a.intersection(b)
 
-print(a & b)  # a.intersection(b)
+def even_or_odd(number):
+    if number % 2 == 0:
+        return 'Чётное'
+    return 'Нечётное'
 
-# Симметричная разность
-print(a ^ b)  # a.symmetric_difference(b)
+
+# global scope
+num = 7  # глобальная переменная
+print(even_or_odd(num))
+
