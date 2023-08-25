@@ -1,7 +1,13 @@
-# Аннотирование типов
+# Анонимная функция (lambda)
 
-def summ(a: int, b: int) -> int:
-    return a + b
+def power(a, b):
+    return a ** b
 
 
-print(summ(4, 6))
+lst = ['Иван', 'Пётр', 'Сидор']
+lst.sort(key=lambda e: e[2])
+
+lst2 = map(lambda a: 'Привет, ' + a + '!!!', lst)
+
+print(lst)
+print(list(lst2))
