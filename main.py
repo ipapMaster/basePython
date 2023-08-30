@@ -1,9 +1,16 @@
-# RAM - Random Access Memory (ОЗУ)
-# SSD - Solid State Drive (Flash Memory, ПЗУ)
-# filename + .ext - расширение
-# режим(mode) - w (write) - файл либо создаётся,
-# либо в нём все стирается и пишется заново
-# a (append) - дописывается (если не существовал, создаётся)
-f = open('info.txt', 'wt', encoding='utf-8')
-print('Печатаем прямо в файл', file=f)  # печать прямо в файл
+# Задача: даны два списка.
+# Необходимо записать в текстовый файл элементы,
+# общие для этих двух списков:
+
+list_1 = [1, 3, 5, 8, 12, 24, 37, 55, 89]
+list_2 = [2, 4, 5, 8, 14, 24, 39, 58, 89]
+
+set_1 = set(list_1)  # преобразовываем списки
+set_2 = set(list_2)  # в множества
+
+result = set_1 & set_2  # пересечение
+# set_1.intersection(set_2)
+
+f = open('info.txt', 'w')
+print(*sorted(result), sep=', ', file=f)
 f.close()
