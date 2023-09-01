@@ -7,15 +7,17 @@
 string = 'Видеть, вертеть, смотреть'
 
 length = len(string)
-count = string.count('еть')
 
-print('"еть" встречается', count, 'раз(а):')
+if string.find('еть') != -1:  # if 'еть' in string
+    count = string.count('еть')
 
-index = string.find('еть')  # с самого начала
-print(index)
+    print('"еть" встречается', count, 'раз(а):')
 
-index = string.find('еть', index + 1)  # с некоего индекса
-print(index)
+    index = string.find('еть')  # с самого начала
+    print(index)
 
-index = string.find('еть', index + 1, length)  # с некоего индекса по конечный индекс
-print(index)
+    index = string.find('еть', index + 1)  # с некоего индекса
+    print(index)
+
+    index = string.find('еть', index + 1, length)  # с некоего индекса по конечный индекс
+    print(index)
