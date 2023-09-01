@@ -8,5 +8,5 @@ name = 'Дмитрий'
 age = 12
 height = 141.9
 
-f_string = 'Имя: {0},\nвозраст: {1} лет,\nрост: {2} см.'.format(name, age, height)
+f_string = 'Имя: {:s},\nвозраст: {:2d} лет,\nрост: {:.1f} см.'.format(name, age, height)
 print(f_string)
