@@ -1,12 +1,25 @@
-# Строки
 # Исключения
 # Модули и их применение
-# Форматирование строки при помощи f-строки (Python 3.6 >)
-# %s - строка, %f - дробь, %d - целое
+print('Считаем остаток от деления числа 10.')
 
-name = 'Дмитрий'
-age = 12
-height = 141.59
+num = input('Введите целое число: ')
+at_the_end = ''
 
-f_string = f'Имя: {name:30s},\nвозраст: {age:3d} лет,\nрост: {height:.1f} см.'
-print(f_string)
+try:
+    value = int(num)  # Пытаемся преобразовать строку в целое число
+    res = 10 % value
+except ZeroDivisionError:  # Деление на ноль
+    print('На ноль делить нельзя')
+    at_the_end = 'Ай-ай-ай'
+except ValueError:
+    print('Вас просили ввести целое число.')
+    print(f'А вот, что ввели Вы: {num}')
+    at_the_end = 'Ну как же так!'
+except Exception as e:
+    print('Вот такое исключение:', e.__class__.__name__)
+    at_the_end = 'Ну вот ещё что'
+else:
+    print(f'Остаток от деления 10 на {value} будет {res}')  # Если исключения не возникало
+    at_the_end = 'Спасибо'
+finally:
+    print(at_the_end)  # Выполняется в любом случае
