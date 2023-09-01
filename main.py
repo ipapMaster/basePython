@@ -1,11 +1,21 @@
 # Строки
 # Исключения
 # Модули и их применение
-# Простейшие методы строк
+# Поиск в строке (-1 - если ничего не найдено)
+# Метод find(substr, start=0, end=None)
 
-string = 'Язык программирования Python'
+string = 'Видеть, вертеть, смотреть'
 
-print(string.lower())  # все строчные
-print(string.upper())  # все заглавные
-print(string.capitalize())  # только первая - большая
-print(string.title())  # все слова с большой буквы
+length = len(string)
+count = string.count('еть')
+
+print('"еть" встречается', count, 'раз(а):')
+
+index = string.find('еть')  # с самого начала
+print(index)
+
+index = string.find('еть', index + 1)  # с некоего индекса
+print(index)
+
+index = string.find('еть', index + 1, length)  # с некоего индекса по конечный индекс
+print(index)
