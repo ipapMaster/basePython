@@ -1,13 +1,8 @@
 # Исключения
 # Модули и их применение
-max_val = 10
-min_val = 1
-
+# Утверждение (Assertion)
 try:
-    cur_val = int(input(f'Введите целое число от {min_val} до {max_val}: '))
-    if not min_val <= cur_val <= max_val:
-        raise ValueError('введённое число вне диапазона')
-except ValueError as exp:
-    print('Будьте внимательны:', exp)
-else:
-    print(f'Да. Введенное число лежит в заданном диапазоне: {min_val}...{max_val}')
+    text = input('Введите любой текст: ')
+    assert len(text) > 3  # утверждение
+except AssertionError:
+    print('Длина текста меньше 3-х символов')
