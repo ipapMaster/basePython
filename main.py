@@ -5,8 +5,8 @@
 # %s - строка, %f - дробь, %d - целое
 
 name = 'Дмитрий'
-age = 19
-height = 141.99
+age = 12
+height = 141.9
 
-f_string = '%15s,\nвозраст: %2d лет,\nрост: %6.1f см.' % (name, age, height)
+f_string = 'Имя: {0},\nвозраст: {1} лет,\nрост: {2} см.'.format(name, age, height)
 print(f_string)
