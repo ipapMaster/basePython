@@ -2,22 +2,19 @@
 # Исключения
 # Модули и их применение
 # Поиск в строке (-1 - если ничего не найдено)
-# Метод find(substr, start=0, end=None)
+# Метод replace(old, new, count=None)
 
-string = 'Видеть, вертеть, смотреть'
+tv = 'тиливизор'  # телевизор
+print(tv.replace('и', 'е', 2))
+
+string = '+7-012-345-67-89'
 
 length = len(string)
 
-if string.find('еть') != -1:  # if 'еть' in string
-    count = string.count('еть')
+# заменяем на открытую скобку
+o_braked_phone = string.replace('-', ' (', 1)
+print(o_braked_phone)
 
-    print('"еть" встречается', count, 'раз(а):')
-
-    index = string.find('еть')  # с самого начала
-    print(index)
-
-    index = string.find('еть', index + 1)  # с некоего индекса
-    print(index)
-
-    index = string.find('еть', index + 1, length)  # с некоего индекса по конечный индекс
-    print(index)
+# заменяем на открытую скобку
+c_braked_phone = o_braked_phone.replace('-', ') ', 1)
+print(c_braked_phone)
