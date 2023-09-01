@@ -1,20 +1,12 @@
 # Строки
 # Исключения
 # Модули и их применение
-# Поиск в строке (-1 - если ничего не найдено)
-# Метод replace(old, new, count=None)
+# Форматирование строки
+# %s - строка, %f - дробь, %d - целое
 
-tv = 'тиливизор'  # телевизор
-print(tv.replace('и', 'е', 2))
+name = 'Дмитрий'
+age = 19
+height = 141.99
 
-string = '+7-012-345-67-89'
-
-length = len(string)
-
-# заменяем на открытую скобку
-o_braked_phone = string.replace('-', ' (', 1)
-print(o_braked_phone)
-
-# заменяем на открытую скобку
-c_braked_phone = o_braked_phone.replace('-', ') ', 1)
-print(c_braked_phone)
+f_string = '%15s,\nвозраст: %2d лет,\nрост: %6.1f см.' % (name, age, height)
+print(f_string)
