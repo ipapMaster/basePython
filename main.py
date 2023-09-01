@@ -1,13 +1,11 @@
 # Строки
 # Исключения
 # Модули и их применение
-# Функции "антонимы"
-string = '«'
+# Простейшие методы строк
 
-# Код символа "угловой кавычки" в системе Unicode - ord
-code = ord(string)
-print(code)
+string = 'Язык программирования Python'
 
-# Вывод символа по Unicode - chr
-symbol = chr(code)
-print(symbol)
+print(string.lower())  # все строчные
+print(string.upper())  # все заглавные
+print(string.capitalize())  # только первая - большая
+print(string.title())  # все слова с большой буквы
