@@ -1,25 +1,13 @@
 # Исключения
 # Модули и их применение
-print('Считаем остаток от деления числа 10.')
-
-num = input('Введите целое число: ')
-at_the_end = ''
+max_val = 10
+min_val = 1
 
 try:
-    value = int(num)  # Пытаемся преобразовать строку в целое число
-    res = 10 % value
-except ZeroDivisionError:  # Деление на ноль
-    print('На ноль делить нельзя')
-    at_the_end = 'Ай-ай-ай'
-except ValueError:
-    print('Вас просили ввести целое число.')
-    print(f'А вот, что ввели Вы: {num}')
-    at_the_end = 'Ну как же так!'
-except Exception as e:
-    print('Вот такое исключение:', e.__class__.__name__)
-    at_the_end = 'Ну вот ещё что'
+    cur_val = int(input(f'Введите целое число от {min_val} до {max_val}: '))
+    if not min_val <= cur_val <= max_val:
+        raise ValueError('введённое число вне диапазона')
+except ValueError as exp:
+    print('Будьте внимательны:', exp)
 else:
-    print(f'Остаток от деления 10 на {value} будет {res}')  # Если исключения не возникало
-    at_the_end = 'Спасибо'
-finally:
-    print(at_the_end)  # Выполняется в любом случае
+    print(f'Да. Введенное число лежит в заданном диапазоне: {min_val}...{max_val}')
