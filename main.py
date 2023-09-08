@@ -14,8 +14,8 @@ import re
 # * - от нуля до "бесконечности" (32767) - {0,}
 # ? - от единицы до "бесконечности" (32767) - {1,}
 # https://regex101.com/
-# в html-документе "вытащить" url из тега ссылки
-pattern = r'href=[\'"]?([^\'">]+)'
+# в html-документе "вытащить" anchor из тега ссылки
+pattern = r'<a.*?>(.*?)</a>'
 testString = '<a href="http://ya.ru">Яндекс</a>'
 
 result = re.findall(pattern, testString)
