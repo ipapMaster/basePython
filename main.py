@@ -3,8 +3,9 @@
 
 import re
 
-pattern = r'\b\w{4}\b'
-testString = 'Мама мыла раму, а папа уехал на пилораму'
+pattern = r'\d{3}'  # 3 цифры, идущие подряд
+testString = 'Для экстренных вызовов - 12'
 
 result = re.findall(pattern, testString)
 print(result)
+# print('Цифры присутствуют в строке') if result else print('Цифр нет!')
