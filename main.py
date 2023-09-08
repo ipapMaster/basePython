@@ -48,7 +48,19 @@ class Rectangle:
     def perimetr(self):
         return (self.a + self.b) * 2
 
+    def __eq__(self, other):
+        if (self.a == other.a) and (self.b == other.b):
+            return True
+        return False
 
+    def __add__(self, other):
+        return self.a + other.a, self.b + other.b
+
+    def __mul__(self, other):
+        return self.a * other.a, self.b * other.b
+
+
+# DRY - do not repeat yourself
 class Square(Rectangle):
     def __init__(self, side):
         super().__init__(side, side)
@@ -83,8 +95,12 @@ class Person:
 
 
 # создаём экземпляры
-student = Student('Bill', 'Oxford'), Student('John', 'Гарвард')
+sq1 = Square(6)
+sq2 = Square(4)
 
-# Работаем с экземплярами
-print(student)
+# sq1 * sq2 -> sq1.__mul__(sq2)
 
+# работаем с экземплярами
+# хотим сравнить два прямоугольника
+sq = sq1 * sq2
+print(sq)
