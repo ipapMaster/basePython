@@ -15,8 +15,9 @@ import re
 # ? - от единицы до "бесконечности" (32767) - {1,}
 
 # в html-документе "вытащить", находящееся между <p> и </p>
-pattern = r'<p>(.*?)</p>'
-testString = '<b>Жирный</b>.<p>Содержимое абзаца</p>.<i>курсив</i>'
+# игнорируя атрибуты от <p и до >
+pattern = r'<p[^>]*>(.*?)</p>'
+testString = '<b>Центрируем: </b><p align="center">Содержимое абзаца</p>'
 
 result = re.findall(pattern, testString, re.I)  # игнорируем регистр
 print(result[0])
