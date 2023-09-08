@@ -1,106 +1,39 @@
-# При наследовании:
-# базовый, родительский, суперкласс, super
-# производным, дочерним, derived
+# PIL - Python Imaging Library:
+# pip install pillow
 
-def shape_info(shape):
-    print(f'Фигура - {shape.name}. Площадь = {shape.area()}, Периметр = {shape.perimetr()}')
+from PIL import Image, ImageFilter
 
+try:
+    original = Image.open('python.png')
+except FileNotFoundError:
+    print('Файл не найден')
 
-class Fruit:
-    count = 0  # static
+# pixels = original.load()  # получили массив с пикселями
+w, h = original.size  # получили размер в переменных w и h
 
-    def __init__(self, name='noname', weight=0):
-        self.name = name
-        self.weight = weight
-        Fruit.count += 1
-
-    def get_name(self):
-        return self.name
-
-    def set_name(self, newname):
-        self.name = newname
-
-    @staticmethod
-    def get_count():
-        return Fruit.count
+resized = original.resize((w//2, h//2))
+resized.save('thumb.png')
 
 
-class Circle:
-    def __init__(self, radius):
-        self.radius = radius
-        self.name = 'Круг'
+# for x in range(w):
+#     for y in range(h):
+#         r, g, b = pixels[x, y]
+#         pixels[x, y] = g, b, r
+#
+# original.save('inverted.png')
 
-    def area(self):
-        return 3.14 * self.radius ** 2
+# contour = original.filter(ImageFilter.CONTOUR)
+# contour.save('contour.png')
+# cropped = original.crop((195 // 2, 0, 195, 113))
+# cropped.save('crop.png')
+# blur = original.filter(ImageFilter.BLUR)
+# boxblur = original.filter(ImageFilter.BoxBlur(20))
+# gaussblur = original.filter(ImageFilter.GaussianBlur(20))
+# blur.save('python_blur.png')
+# boxblur.save('python_box.png')
+# gaussblur.save('python_gauss.png')
 
-    def perimetr(self):
-        return 2 * 3.14 * self.radius
-
-
-class Rectangle:
-    def __init__(self, a, b):
-        self.a = a
-        self.b = b
-
-    def area(self):
-        return self.a * self.b
-
-    def perimetr(self):
-        return (self.a + self.b) * 2
-
-    def __eq__(self, other):
-        if (self.a == other.a) and (self.b == other.b):
-            return True
-        return False
-
-    def __add__(self, other):
-        return self.a + other.a, self.b + other.b
-
-    def __mul__(self, other):
-        return self.a * other.a, self.b * other.b
-
-
-# DRY - do not repeat yourself
-class Square(Rectangle):
-    def __init__(self, side):
-        super().__init__(side, side)
-        self.name = 'Квадрат'
-
-
-class Student:
-    def __init__(self, name, university):
-        self.name = name
-        self.university = university
-
-    # Для print() и str()
-    # Вывод читабельной информации об объекте
-    def __str__(self):
-        return f'{self.name}, {self.university}'
-
-    # Для разработчика (debug) информации о
-    # сложном объекте (список объектов или кортеж...)
-    def __repr__(self):
-        return f'Класс: {self.__class__.__name__}, {self.name}, {self.university}'
-
-
-class Employee:
-    def __init__(self, name, company):
-        self.name = name
-        self.company = company
-
-
-class Person:
-    def __init__(self, name):
-        self.name = name
-
-
-# создаём экземпляры
-sq1 = Square(6)
-sq2 = Square(4)
-
-# sq1 * sq2 -> sq1.__mul__(sq2)
-
-# работаем с экземплярами
-# хотим сравнить два прямоугольника
-sq = sq1 * sq2
-print(sq)
+print('Параметры изображения:')
+print('Формат:', original.format)
+print('Размер:', original.size)
+print('Цветовая схема:', original.mode)
