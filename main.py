@@ -13,5 +13,5 @@ pattern = '[^абвгд]'  # любая буква в строке, исключ
 testString = 'АБВГДейка - есть такая передача!'
 
 result = re.findall(pattern, testString, re.I)  # игнорируем регистр
-print(result)
+print(*result, sep='')
 # print('Цифры присутствуют в строке') if result else print('Цифр нет!')
