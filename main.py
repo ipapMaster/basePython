@@ -60,6 +60,16 @@ class Student:
         self.name = name
         self.university = university
 
+    # Для print() и str()
+    # Вывод читабельной информации об объекте
+    def __str__(self):
+        return f'{self.name}, {self.university}'
+
+    # Для разработчика (debug) информации о
+    # сложном объекте (список объектов или кортеж...)
+    def __repr__(self):
+        return f'Класс: {self.__class__.__name__}, {self.name}, {self.university}'
+
 
 class Employee:
     def __init__(self, name, company):
@@ -73,28 +83,8 @@ class Person:
 
 
 # создаём экземпляры
-circle = Circle(5)
-square = Square(5)
-men = [
-    Student('Bill', 'Oxford'),
-    Employee('Tom', 'Google'),
-    Person('Bob')
-]
+student = Student('Bill', 'Oxford'), Student('John', 'Гарвард')
 
 # Работаем с экземплярами
-shape_info(circle)
-shape_info(square)
+print(student)
 
-for man in men:
-    if isinstance(man, Student):
-        print(man.university)
-    elif isinstance(man, Employee):
-        print(man.company)
-    else:
-        print(man.name)
-
-apple = Fruit()
-lemon = Fruit()
-mango = Fruit()
-
-print(Fruit.get_count())
