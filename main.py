@@ -13,10 +13,10 @@ import re
 # . - любой символ
 # * - от нуля до "бесконечности" (32767) - {0,}
 # ? - от единицы до "бесконечности" (32767) - {1,}
-
-# в html-документе "вытащить" url из текста
-pattern = r'http(?:s)?://[\S]+'
-testString = 'Информация есть на сайте https://google.com'
+# https://regex101.com/
+# в html-документе "вытащить" url из тега ссылки
+pattern = r'href=[\'"]?([^\'">]+)'
+testString = '<a href="http://ya.ru">Яндекс</a>'
 
 result = re.findall(pattern, testString)
 print(result)
