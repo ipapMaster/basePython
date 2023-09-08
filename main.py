@@ -1,23 +1,24 @@
-# Регулярные выражения
-# Regular Expression
+# Работа с БД PostgreSQL
+# pip install psycopg2
+import psycopg2 as db
 
-import re
+# Соединение
+connection = db.connect(host='localhost',
+                        port=5500,
+                        user='postgres',
+                        password='123',
+                        dbname='biblio')
+# Курсор
+cursor = connection.cursor()
 
-# Квантификаторы (quantifier)
-# m - минимальное число совпадений
-# n - максимальное число совпадений
-# {m} - ровно m раз
-# {m,} - m раз и более
-# {,n} - не более n раз
-# {m, n} - от m до n раз
-# . - любой символ
-# * - от нуля до "бесконечности" (32767) - {0,}
-# ? - от единицы до "бесконечности" (32767) - {1,}
-# https://regex101.com/
-# в html-документе "вытащить" anchor из тега ссылки
-pattern = r'<a.*?>(.*?)</a>'
-testString = '<a href="http://ya.ru">Яндекс</a>'
+query = "SELECT * FROM genre"
+cursor.execute(query)
+result = cursor.fetchall()
 
-result = re.findall(pattern, testString)
-print(result)
-# print('Цифры присутствуют в строке') if result else print('Цифр нет!')
+print(result[1][0])
+
+# Отключаем курсор
+cursor.close()
+
+# Отключаемся от БД
+connection.close()
