@@ -14,11 +14,10 @@ import re
 # * - от нуля до "бесконечности" (32767) - {0,}
 # ? - от единицы до "бесконечности" (32767) - {1,}
 
-# в html-документе "вытащить", находящееся между <p> и </p>
-# игнорируя атрибуты от <p и до >
-pattern = r'<p[^>]*>(.*?)</p>'
-testString = '<b>Центрируем: </b><p align="center">Содержимое абзаца</p>'
+# в html-документе "вытащить" url из текста
+pattern = r'http(?:s)?://[\S]+'
+testString = 'Информация есть на сайте https://google.com'
 
-result = re.findall(pattern, testString, re.I)  # игнорируем регистр
-print(result[0])
+result = re.findall(pattern, testString)
+print(result)
 # print('Цифры присутствуют в строке') if result else print('Цифр нет!')
