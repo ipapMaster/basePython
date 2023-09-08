@@ -14,9 +14,9 @@ import re
 # * - от нуля до "бесконечности" (32767) - {0,}
 # ? - от единицы до "бесконечности" (32767) - {1,}
 
-pattern = r'<img.*>'  # greedy (жадный квантификатор)
+pattern = r'<img[^>]+src="([^">]+)"'  # вычленяем само название файла картинки
 testString = 'Картинка <img src="bg.jpg"> в тексте</p>'
 
 result = re.findall(pattern, testString, re.I)  # игнорируем регистр
-print(result)
+print(result[0])
 # print('Цифры присутствуют в строке') if result else print('Цифр нет!')
