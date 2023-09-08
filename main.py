@@ -3,8 +3,8 @@
 
 import re
 
-pattern = r'\d{3}'  # 3 цифры, идущие подряд
-testString = 'Для экстренных вызовов - 12'
+pattern = r'начать!\Z'  # на что заканчивается
+testString = 'Главное в любом деле - начать!'
 
 result = re.findall(pattern, testString)
 print(result)
